@@ -1,0 +1,79 @@
+*justdo.txt*	Just Do. Bwahahaha!!                          v0.1
+===============================================================================
+            ▄█ ███    █▄     ▄████████     ███     ████████▄   ▄██████▄  
+           ███ ███    ███   ███    ███ ▀█████████▄ ███   ▀███ ███    ███ 
+           ███ ███    ███   ███    █▀     ▀███▀▀██ ███    ███ ███    ███ 
+           ███ ███    ███   ███            ███   ▀ ███    ███ ███    ███ 
+           ███ ███    ███ ▀███████████     ███     ███    ███ ███    ███ 
+           ███ ███    ███          ███     ███     ███    ███ ███    ███ 
+           ███ ███    ███    ▄█    ███     ███     ███   ▄███ ███    ███ 
+       █▄ ▄███ ████████▀   ▄████████▀     ▄████▀   ████████▀   ▀██████▀  
+       ▀▀▀▀▀▀                                                            
+===============================================================================
+CONTENTS                                                      *justdo-contents*
+
+    1. Intro.........................................|justdo-intro|
+    2. Options.......................................|justdo-options|
+    3. Commands......................................|justdo-commands|
+
+===============================================================================
+INTRO                                                            *justdo-intro*
+
+Just execute same command repeatly in the convinent way.
+
+===============================================================================
+OPTIONS                                                        *justdo-options*
+
+Overview:~
+  |justdo_silent|....................Whether execute command silently.
+
+-------------------------------------------------------------------------------
+Detailed descriptions and default values:~
+
+                                                           *'g:justdo_silent'*
+Use this option to control whether execute command silently, Default is 1: >
+  let g:justdo_silent = 0
+<
+
+===============================================================================
+COMMANDS                                                      *justdo-commands*
+
+:JustDo
+    Execute command, otherwise asking for command.
+
+:JustDoSet
+    Set command for executing.
+
+:JustDoClear
+    Clear command.
+
+:JustDoPrint
+    Print current command.
+
+===============================================================================
+CREDITS                                                        *justdo-credits*
+
+Developed by Steve Lemuel <wlemuel@hotmail.com>. Distributed under MIT license.
+
+Project's homepage:   https://github.com/wlemuel/vim-justdo
+Git repository:       https://github.com/wlemuel/vim-justdo
+
+===============================================================================
+APPENDIX                                                      *justdo-appendix*
+
+I'd be glad to receive patches, comments and your considered criticism.
+Have fun with vim-justdo!
+
+===============================================================================
+CHANGELOG                                                    *justdo-changelog*
+
+v0.1 - 2019/08/26
+    + Finish basic functions.
+    + New commands: |:JustDo|,
+                    |:JustDoSet|
+                    |:JustDoClear|
+                    |:JustDoPrint|
+    + New options: |g:justdo_silent|
+
+===============================================================================
+vim:ft=help:et:ts=2:sw=2:sts=2:norl
