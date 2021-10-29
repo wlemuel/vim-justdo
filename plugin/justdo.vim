@@ -13,10 +13,12 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 " Main Content
-command! -nargs=0 JustDo      call justdo#execute()
-command! -nargs=0 JustDoSet   call justdo#set_command()
-command! -nargs=0 JustDoClear call justdo#clear_command()
-command! -nargs=0 JustDoPrint call justdo#print_command()
+command! -nargs=0 JustDo        call justdo#execute()
+command! -nargs=0 JustDoSet     call justdo#set_command()
+command! -nargs=0 JustDoClear   call justdo#clear_command()
+command! -nargs=0 JustDoPrint   call justdo#print_command()
+command! -nargs=0 JustDoHistory call justdo#show_history()
+command! -nargs=0 JustDoToggleSilent call justdo#toggle_silent()
 
 let g:loaded_justdo = 1
 

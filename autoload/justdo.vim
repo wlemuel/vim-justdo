@@ -15,6 +15,7 @@ set cpo&vim
 " Global Variables {{{
 
 let g:justdo_silent = 1
+let g:justdo_history_file = "~/.cache/vim-justdo.history"
 
 " }}}
 
@@ -60,6 +61,38 @@ fu! justdo#clear_command() abort
   echo "[vim-justdo] clear '" . s:command . "'"
   let s:command = ''
 endf
+
+fu! justdo#save_history() abort
+  let history_file = expand(g:justdo_history_file)
+  if justdo#check_command()
+    call writefile([s:command], history_file, "a")
+    call system("gawk -i inplace '!seen[$0]++' " . history_file)
+  else
+    echo "[vim-justdo] the command is not set."
+  endif
+endf
+
+fu! justdo#show_history() abort
+  if filereadable(expand(g:justdo_history_file))
+    let history = system("awk '!seen[$0]++' " . expand(g:justdo_history_file) . " | tail -n 20 | nl")
+    echo "     [vim-justdo] - History\n\n" . history
+  else
+    echo "[vim-justdo] history does not exist."
+  endif
+endf
+
+fu! justdo#toggle_silent() abort
+  if g:justdo_silent
+    let g:justdo_silent = 0
+  else
+    let g:justdo_silent = 1
+  endif
+endf
+
+augroup JustDo
+  autocmd!
+  autocmd VimLeavePre * call justdo#save_history()
+augroup END
 
 let g:autoloaded_justdo = 1
 
